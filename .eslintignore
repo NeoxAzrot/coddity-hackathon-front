@@ -1,0 +1,10 @@
+.idea
+.storybook
+.config
+node_modules/*
+config/*
+public/*
+scripts/*
+
+apollo.config.js
+craco.config.js

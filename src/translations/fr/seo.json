@@ -1,0 +1,15 @@
+{
+  "title": "Website title",
+  "description": "Website description",
+  "404": {
+    "title": "Error 404",
+    "description": "Description 404"
+  },
+  "publisher": "Sami Lafrance",
+  "copyright": "© Sami Lafrance",
+  "author": "Sami Lafrance",
+  "reply-to": "contact@samilafrance.com",
+  "keywords": "Keyword 1, keyword 2, keyword 3",
+  "generator": "VS Code",
+  "category": "Category 1, category 2, category 3"
+}

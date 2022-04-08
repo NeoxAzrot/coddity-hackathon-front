@@ -1,0 +1,19 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "importOrder": [
+    "^api/(.*)$",
+    "^components/(.*)$",
+    "^pages/(.*)$",
+    "^theme/(.*)$",
+    "^translations/(.*)$",
+    "^types/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

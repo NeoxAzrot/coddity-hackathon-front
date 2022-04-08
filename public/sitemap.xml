@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://localhost:3000</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2022-03-04T14:38:07.401Z</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>

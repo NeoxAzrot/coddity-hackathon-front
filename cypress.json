@@ -1,0 +1,7 @@
+{
+  "component": {
+    "testFiles": "**/*.spec.{js,ts,jsx,tsx}",
+    "componentFolder": "cypress"
+  },
+  "baseUrl": "http://localhost:3000"
+}
