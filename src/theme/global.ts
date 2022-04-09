@@ -7,6 +7,11 @@ export const GlobalStyle = createGlobalStyle`
     src: url("/assets/fonts/Roboto.ttf") format("truetype");
   }
 
+  @font-face {
+    font-family: 'IowanOldSt BT';
+    src: url("/assets/fonts/Iowan_Old_Style_bold.woff") format("truetype");
+  }
+
   body {
     font-family: ${theme.fonts.primary};
     font-size: 1.6rem;

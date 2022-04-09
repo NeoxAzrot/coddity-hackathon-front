@@ -1,13 +1,13 @@
 interface ColorsType {
   primary: string;
-  secondary: string;
+  accent: string;
   white: string;
   black: string;
 }
 
 const colors: ColorsType = {
-  primary: '#ffffff',
-  secondary: '#000000',
+  primary: '#F7EADE',
+  accent: '#3D6343',
   white: '#ffffff',
   black: '#000000',
 };
