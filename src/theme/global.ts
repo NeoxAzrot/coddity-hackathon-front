@@ -3,13 +3,15 @@ import theme from 'theme';
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Roboto';
-    src: url("/assets/fonts/Roboto.ttf") format("truetype");
+    font-family: 'IowanOldSt BT';
+    font-weight: 600;
+    src: url("/assets/fonts/Iowan_Old_Style_bold.woff") format("truetype");
   }
 
   @font-face {
     font-family: 'IowanOldSt BT';
-    src: url("/assets/fonts/Iowan_Old_Style_bold.woff") format("truetype");
+    font-weight: 400;
+    src: url("/assets/fonts/Iowan_Old_Style_regular.woff") format("truetype");
   }
 
   body {

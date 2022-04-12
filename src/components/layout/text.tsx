@@ -8,6 +8,7 @@ interface TextProps {
   type?: React.ElementType;
   color?: string;
   size?: string;
+  fontFamily?: string;
   weight?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
   uppercase?: boolean;
   lineHeight?: string;
@@ -22,6 +23,7 @@ interface TextProps {
 interface TextContainerProps {
   color?: string;
   size?: string;
+  fontFamily?: string;
   weight?: string;
   uppercase?: boolean;
   lineHeight?: string;
@@ -35,7 +37,7 @@ interface TextContainerProps {
 
 const Container = styled.p<TextContainerProps>`
   color: ${({ color }) => (color ? color : theme.colors.black)};
-  font-family: ${theme.fonts.primary};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : theme.fonts.primary)};
   font-size: ${({ size }) => (size ? size : '1.6rem')};
   font-weight: ${({ weight }) => weight && weight};
   line-height: ${({ lineHeight }) => lineHeight && lineHeight};
@@ -54,6 +56,7 @@ const Text: FC<TextProps> = ({
   type,
   color,
   size,
+  fontFamily,
   weight,
   uppercase,
   lineHeight,
@@ -69,6 +72,7 @@ const Text: FC<TextProps> = ({
     <Container
       color={color}
       size={size}
+      fontFamily={fontFamily}
       weight={weight}
       uppercase={uppercase}
       lineHeight={lineHeight}

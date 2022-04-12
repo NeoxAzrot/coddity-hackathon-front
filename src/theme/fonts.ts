@@ -4,7 +4,7 @@ interface FontsType {
 }
 
 const fonts: FontsType = {
-  primary: '"Roboto", sans-serif',
+  primary: '"Lato", sans-serif',
   secondary: '"IowanOldSt BT", sans-serif',
 };
 
