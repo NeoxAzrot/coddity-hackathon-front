@@ -25,7 +25,7 @@ const Header: FC = () => {
         <Link to="/">
           <Text
             content={t('nav.quiz')}
-            color="black"
+            color={theme.colors.black}
             fontFamily={theme.fonts.secondary}
             size="2.6rem"
           />
@@ -33,7 +33,7 @@ const Header: FC = () => {
         <Link to="#About">
           <Text
             content={t('nav.about')}
-            color="black"
+            color={theme.colors.black}
             fontFamily={theme.fonts.secondary}
             size="2.6rem"
             marginLeft="4.4rem"
@@ -42,7 +42,7 @@ const Header: FC = () => {
         <Link to="#Data">
           <Text
             content={t('nav.data')}
-            color="black"
+            color={theme.colors.black}
             fontFamily={theme.fonts.secondary}
             size="2.6rem"
             marginLeft="4.4rem"

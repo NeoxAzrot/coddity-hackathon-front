@@ -5,14 +5,11 @@ import theme from 'theme';
 
 interface ButtonProps {
   url: string;
-  className?: string;
 }
 
 const Container = styled.div`
-  background-color: ${theme.colors.primary};
-  border-radius: 50px;
   font-family: ${theme.fonts.primary};
-  padding: 3rem 4rem;
+  font-size: 1.8rem;
   position: relative;
   text-transform: uppercase;
 
@@ -21,9 +18,9 @@ const Container = styled.div`
   }
 `;
 
-const Button: FC<ButtonProps> = ({ children, className, url }) => {
+const Button: FC<ButtonProps> = ({ children, url }) => {
   return (
-    <Container className={className}>
+    <Container>
       <Link to={url}>{children}</Link>
     </Container>
   );

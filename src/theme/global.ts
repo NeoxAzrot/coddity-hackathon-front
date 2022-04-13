@@ -18,8 +18,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${theme.fonts.primary};
     font-size: 1.6rem;
     color: ${theme.colors.black};
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.background};
   }
+
+  b {
+    font-weight: 600;
+  } 
 
   img {
     user-select: none;
