@@ -1,8 +1,8 @@
 {
-  "name": "website-name",
-  "description": "Website description",
-  "author": "Sami Lafrance",
-  "version": "0.1.0",
+  "name": "warmd",
+  "description": "Hackathon organized by Coddity, about how to make IPCC solutions accessible to everyone?",
+  "author": "Sami Lafrance && Elise Echasseriau",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "craco start",

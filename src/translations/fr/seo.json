@@ -5,6 +5,14 @@
     "title": "Error 404",
     "description": "Description 404"
   },
+  "quiz": {
+    "title": "Quiz",
+    "description": "Description quiz"
+  },
+  "ranks": {
+    "title": "Ranks",
+    "description": "Description ranks"
+  },
   "publisher": "Sami Lafrance",
   "copyright": "© Elise Echasseriau & Sami Lafrance",
   "author": "Sami Lafrance & Elise Echasseriau",

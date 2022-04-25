@@ -1,7 +1,11 @@
+import { useMutation } from '@apollo/client';
 import { FC, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import theme from 'theme';
+
+import { CREATE_SURVEY } from 'api/survey.apollo';
 
 import Ball from 'components/ball';
 import Button from 'components/layout/button';
@@ -24,14 +28,23 @@ const Home: FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { t: tSeo } = useTranslation('seo');
+  const [createSurvey, { error }] = useMutation<CreateSurvey>(CREATE_SURVEY);
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const handleCreateQuiz = async () => {
+    await createSurvey().then((res) => {
+      if (!error) {
+        navigate(`/quiz/${res.data?.createSurvey.slug}`);
+      }
+    });
+  };
 
   return (
     <Layout>
       <Meta
-        title={tSeo('title')}
-        description={tSeo('description')}
+        title={t('seo:title')}
+        description={t('seo:description')}
         url="/"
         image="/favicon/android-chrome-512x512.png"
       />
@@ -48,16 +61,7 @@ const Home: FC = () => {
           />
           <Flex justify="center">
             <Ball />
-            <StyledButton url="/">
-              <Text
-                content={t('button.start_quiz')}
-                color={theme.colors.black}
-                fontFamily={theme.fonts.primary}
-                size="2.5rem"
-                weight="500"
-                uppercase
-              />
-            </StyledButton>
+            <StyledButton content={t('button.start_quiz')} onClick={handleCreateQuiz} />
           </Flex>
         </Flex>
         <Text

@@ -10,7 +10,7 @@ interface MetaProps {
 }
 
 const Meta: FC<MetaProps> = ({ title, description, url, image }) => {
-  const { t: tSeo } = useTranslation('seo');
+  const { t } = useTranslation();
 
   return (
     <Helmet>
@@ -31,18 +31,18 @@ const Meta: FC<MetaProps> = ({ title, description, url, image }) => {
       <meta name="Language" content="fr" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
-      <meta name="copyright" content={tSeo('copyright')} />
-      <meta name="publisher" content={tSeo('publisher')} />
-      <meta name="reply-to" content={tSeo('reply-to')} />
+      <meta name="copyright" content={t('seo:copyright')} />
+      <meta name="publisher" content={t('seo:publisher')} />
+      <meta name="reply-to" content={t('seo:reply-to')} />
       <meta httpEquiv="Cache-control" content="public" />
 
-      <meta name="keywords" content={tSeo('keywords')} />
-      <meta name="Author" content={tSeo('author')} />
-      <meta name="Generator" content={tSeo('generator')} />
+      <meta name="keywords" content={t('seo:keywords')} />
+      <meta name="Author" content={t('seo:author')} />
+      <meta name="Generator" content={t('seo:generator')} />
       <meta name="Identifier-URL" content={process.env.REACT_APP_WEBSITE_URL} />
       <meta name="Distribution" content="global" />
       <meta name="Revisit-After" content="15 days" />
-      <meta name="Category" content={tSeo('category')} />
+      <meta name="Category" content={t('seo:category')} />
 
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
@@ -64,7 +64,7 @@ const Meta: FC<MetaProps> = ({ title, description, url, image }) => {
       <meta property="og:image:secure_url" content={process.env.REACT_APP_WEBSITE_URL + image} />
       <meta property="og:description" content={description} />
       <meta property="og:locale" content="fr_FR" />
-      <meta property="og:site_name" content={tSeo('title')} />
+      <meta property="og:site_name" content={t('seo:title')} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@LafranceSami" />

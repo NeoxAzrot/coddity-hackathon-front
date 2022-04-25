@@ -22,7 +22,7 @@ const Header: FC = () => {
         <img src="assets/images/logo.png" alt="" />
       </Link>
       <Flex>
-        <Link to="/">
+        <Link to="/d">
           <Text
             content={t('nav.quiz')}
             color={theme.colors.black}

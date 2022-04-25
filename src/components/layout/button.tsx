@@ -1,11 +1,13 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import theme from 'theme';
 
+import Text from 'components/layout/text';
+
 interface ButtonProps {
-  url: string;
   className?: string;
+  content: string;
+  onClick: () => void;
 }
 
 const Container = styled.div`
@@ -21,10 +23,21 @@ const Container = styled.div`
   }
 `;
 
-const Button: FC<ButtonProps> = ({ children, className, url }) => {
+const ButtonContainer = styled.button``;
+
+const Button: FC<ButtonProps> = ({ className, content, onClick }) => {
   return (
-    <Container className={className}>
-      <Link to={url}>{children}</Link>
+    <Container className={className} onClick={onClick}>
+      <ButtonContainer>
+        <Text
+          content={content}
+          color={theme.colors.black}
+          fontFamily={theme.fonts.primary}
+          size="2.5rem"
+          weight="500"
+          uppercase
+        />
+      </ButtonContainer>
     </Container>
   );
 };
