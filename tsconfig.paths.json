@@ -6,7 +6,8 @@
       "pages": ["pages"],
       "theme": ["theme"],
       "translations": ["translations"],
-      "types": ["types"]
+      "types": ["types"],
+      "utils": ["utils"]
     }
   }
 }

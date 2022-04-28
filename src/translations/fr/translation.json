@@ -2,11 +2,16 @@
   "nav": {
     "quiz": "Quiz",
     "about": "À propos",
-    "data": "Data"
+    "data": "Data",
+    "ranks": "Classement"
   },
   "header": {
     "title": "Climate Matters",
     "subtitle": "Tu veux comprendre les dernières publications du GIEC ? <br/> Savoir si la hausse des températures, des précipitations, des événements extrêmes t’impacteras ? <br/> Tu es au bon endroit !"
+  },
+  "footer": {
+    "rights": "© Tous droits réservés",
+    "credits": "Développé par <a href=\"https://eliseechasseriau.com\" target=\"_blank\">Elise Echasseriau</a> & <a href=\"https://samilafrance.com\" target=\"_blank\">Sami Lafrance</a>"
   },
   "about": {
     "title": "À propos",
@@ -34,7 +39,26 @@
     "yes": "Oui :)",
     "no": "Non :(",
     "start_quiz": "Démarrer le quiz",
-    "back_home": "Retour à la page d'accueil",
-    "next": "Suivant"
+    "back_home": "Page d'accueil",
+    "next": "Suivant",
+    "previous": "Retour",
+    "share": "Partager",
+    "home": "Accueil",
+    "copy": "Copié !"
+  },
+  "quiz": {
+    "result": {
+      "title": "Félicitation ! Tu viens de terminer ton quiz avec",
+      "points": "pts",
+      "share": "Tu peux maintenant défier tes amis ou partager ton score !",
+      "challenge": "Défier mes amis"
+    },
+    "challenge": {
+      "title": "Partage ce lien à ton adversaire !"
+    }
+  },
+  "share": {
+    "text": "Je viens de réussir mon quiz sur Warmd avec {{score}} points 🎉\n\n",
+    "hashtags": "Warmd,Climate,Quiz"
   }
 }

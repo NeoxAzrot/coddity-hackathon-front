@@ -5,7 +5,7 @@ interface FontsType {
 
 const fonts: FontsType = {
   primary: '"Lato", sans-serif',
-  secondary: '"IowanOldSt BT", sans-serif',
+  secondary: '"IowanOldStyle", sans-serif',
 };
 
 export default fonts;

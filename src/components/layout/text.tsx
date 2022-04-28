@@ -18,6 +18,8 @@ interface TextProps {
   marginRight?: string;
   width?: string;
   align?: 'left' | 'center' | 'right';
+  onClick?: () => void;
+  className?: string;
 }
 
 interface TextContainerProps {
@@ -33,10 +35,12 @@ interface TextContainerProps {
   marginRight?: string;
   width?: string;
   align?: string;
+  onClick?: () => void;
 }
 
-const Container = styled.p<TextContainerProps>`
+const TextContainer = styled.p<TextContainerProps>`
   color: ${({ color }) => (color ? color : theme.colors.black)};
+  cursor: ${({ onClick }) => onClick && 'pointer'};
   font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : theme.fonts.primary)};
   font-size: ${({ size }) => (size ? size : '1.6rem')};
   font-weight: ${({ weight }) => weight && weight};
@@ -67,9 +71,11 @@ const Text: FC<TextProps> = ({
   width,
   children,
   align,
+  onClick,
+  className,
 }) => {
   return (
-    <Container
+    <TextContainer
       color={color}
       size={size}
       fontFamily={fontFamily}
@@ -84,6 +90,8 @@ const Text: FC<TextProps> = ({
       align={align}
       as={type || dangerouslySetInnerHTML ? 'div' : type}
       dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+      onClick={onClick}
+      className={className}
     >
       {content && (
         <>
@@ -91,7 +99,7 @@ const Text: FC<TextProps> = ({
           {children}
         </>
       )}
-    </Container>
+    </TextContainer>
   );
 };
 

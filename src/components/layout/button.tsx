@@ -8,37 +8,48 @@ interface ButtonProps {
   className?: string;
   content: string;
   onClick: () => void;
+  backgroundColor?: string;
+  marginLeft?: string;
+  marginTop?: string;
 }
 
-const Container = styled.div`
-  background-color: ${theme.colors.primary};
-  border-radius: 50px;
-  font-family: ${theme.fonts.primary};
-  padding: 3rem 4rem;
-  position: relative;
-  text-transform: uppercase;
+interface ButtonContainerProps {
+  backgroundColor?: string;
+  marginLeft?: string;
+  marginTop?: string;
+}
 
-  &:hover {
-    color: ${theme.colors.primary};
-  }
+const ButtonContainer = styled.button<ButtonContainerProps>`
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ? backgroundColor : theme.colors.primary};
+  border-radius: 3rem;
+  cursor: pointer;
+  font-family: ${theme.fonts.primary};
+  margin-left: ${({ marginLeft }) => marginLeft && marginLeft};
+  margin-top: ${({ marginTop }) => marginTop && marginTop};
+  padding: 1.5rem 3rem;
+  user-select: none;
+  width: fit-content;
 `;
 
-const ButtonContainer = styled.button``;
-
-const Button: FC<ButtonProps> = ({ className, content, onClick }) => {
+const Button: FC<ButtonProps> = ({
+  className,
+  content,
+  onClick,
+  backgroundColor,
+  marginLeft,
+  marginTop,
+}) => {
   return (
-    <Container className={className} onClick={onClick}>
-      <ButtonContainer>
-        <Text
-          content={content}
-          color={theme.colors.black}
-          fontFamily={theme.fonts.primary}
-          size="2.5rem"
-          weight="500"
-          uppercase
-        />
-      </ButtonContainer>
-    </Container>
+    <ButtonContainer
+      className={className}
+      onClick={onClick}
+      backgroundColor={backgroundColor}
+      marginLeft={marginLeft}
+      marginTop={marginTop}
+    >
+      <Text content={content} size="2.2rem" weight="600" />
+    </ButtonContainer>
   );
 };
 

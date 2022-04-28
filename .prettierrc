@@ -12,6 +12,7 @@
     "^theme/(.*)$",
     "^translations/(.*)$",
     "^types/(.*)$",
+    "^utils/(.*)$",
     "^[./]"
   ],
   "importOrderSeparation": true,
