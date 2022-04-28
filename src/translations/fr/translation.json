@@ -32,7 +32,7 @@
     }
   },
   "error404": {
-    "title": "ERROR 404",
+    "title": "Error 404",
     "description": "La page que vous recherchez n’existe pas. Vous pouvez retourner à la page d’accueil en cliquant sur le bouton ci-dessous."
   },
   "button": {
@@ -55,6 +55,10 @@
     },
     "challenge": {
       "title": "Partage ce lien à ton adversaire !"
+    },
+    "gift": {
+      "title": "On dirait bien que tu viens de gagner une récompense !",
+      "qr_code": "Scanne pour découvrir !"
     }
   },
   "share": {

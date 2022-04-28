@@ -137,7 +137,7 @@ const Quiz: FC = () => {
             <Flex direction="column" align="center" width="80%">
               <Score correctAnswers={correctAnswers} />
 
-              <Gift onClick={() => console.log('test')} />
+              <Gift />
 
               <Share score={correctAnswers} setShowShare={setShowShare} />
             </Flex>

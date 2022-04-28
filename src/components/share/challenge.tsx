@@ -30,6 +30,7 @@ const Challenge: FC<ChallengeProps> = ({ slug }) => {
         weight="700"
         size="2.6rem"
       />
+
       <Flex direction="column" align="center" marginTop="12rem" width="100%">
         <Input value={url} width="80%" hasIcon onClick={handleCopyLinkClick} disabled />
         <Button
