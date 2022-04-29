@@ -19,6 +19,7 @@ const InlineButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   position: relative;
+  user-select: none;
 
   &:after {
     background-color: ${theme.colors.light};

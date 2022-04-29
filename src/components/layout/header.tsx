@@ -66,15 +66,6 @@ const Header: FC<HeaderProps> = ({ menuHidden }) => {
               marginLeft="4.4rem"
             />
           </Link>
-          <Link to="/ranks">
-            <Text
-              content={t('nav.ranks')}
-              color={theme.colors.black}
-              fontFamily={theme.fonts.secondary}
-              size="2.6rem"
-              marginLeft="4.4rem"
-            />
-          </Link>
         </Flex>
       )}
     </HeaderContainer>

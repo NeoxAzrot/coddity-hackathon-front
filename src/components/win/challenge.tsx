@@ -35,7 +35,7 @@ const Challenge: FC<ChallengeProps> = ({ slug }) => {
         <Input value={url} width="80%" hasIcon onClick={handleCopyLinkClick} disabled />
         <Button
           content={t('button.home')}
-          marginTop="2rem"
+          marginTop="5rem"
           onClick={() => {
             navigate('/');
           }}

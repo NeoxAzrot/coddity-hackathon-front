@@ -2,8 +2,7 @@
   "nav": {
     "quiz": "Quiz",
     "about": "À propos",
-    "data": "Data",
-    "ranks": "Classement"
+    "data": "Data"
   },
   "header": {
     "title": "Climate Matters",
@@ -33,7 +32,7 @@
   },
   "error404": {
     "title": "Error 404",
-    "description": "La page que vous recherchez n’existe pas. Vous pouvez retourner à la page d’accueil en cliquant sur le bouton ci-dessous."
+    "description": "Cette page n’existe pas."
   },
   "button": {
     "yes": "Oui :)",

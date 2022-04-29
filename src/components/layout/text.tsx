@@ -52,6 +52,28 @@ const TextContainer = styled.p<TextContainerProps>`
   text-align: ${({ align }) => align && align};
   text-transform: ${({ uppercase }) => uppercase && 'uppercase'};
   width: ${({ width }) => width && width};
+
+  a {
+    color: ${theme.colors.primary};
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 0;
+      height: 0.1rem;
+      background-color: ${theme.colors.primary};
+      position: absolute;
+      bottom: -0.1rem;
+      left: 0;
+      transition: width 0.2s ease-in-out;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const Text: FC<TextProps> = ({

@@ -3,15 +3,17 @@ import styled, { keyframes } from 'styled-components';
 
 import Text from 'components/layout/text';
 
+import { getRandomIntInclusive } from 'utils/numbers';
+
 interface EmojiToShowProps {
   emoji: string;
   position: string;
-  delay: number;
+  delay: string;
 }
 
 interface EmojiTextProps {
   position: string;
-  delay: number;
+  delay: string;
 }
 
 const fromToptoBottom = keyframes`
@@ -35,7 +37,7 @@ const EmojiContainer = styled.div`
 
 const EmojiText = styled(Text)<EmojiTextProps>`
   animation: ${fromToptoBottom} 5s linear infinite;
-  animation-delay: ${({ delay }) => delay}s;
+  animation-delay: ${({ delay }) => delay};
   left: ${({ position }) => position};
   position: absolute;
   top: -5rem;
@@ -54,7 +56,7 @@ const Emoji: FC = () => {
     for (let i = 0; i < MAX_EMOJI; i++) {
       const emoji = emojis[Math.floor(Math.random() * emojis.length)];
       const position = `${Math.floor(Math.random() * 100)}vw`;
-      const delay = Math.floor(Math.random() * 10);
+      const delay = `${getRandomIntInclusive(0, 5000)}ms`;
 
       newEmojisToShow.push({ emoji, position, delay });
     }

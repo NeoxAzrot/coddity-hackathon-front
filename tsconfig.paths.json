@@ -3,6 +3,7 @@
     "paths": {
       "api": ["api"],
       "components": ["components"],
+      "hooks": ["hooks"],
       "pages": ["pages"],
       "theme": ["theme"],
       "translations": ["translations"],

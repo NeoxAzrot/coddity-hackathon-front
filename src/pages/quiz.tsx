@@ -14,11 +14,13 @@ import Counter from 'components/question/counter';
 import Explanation from 'components/question/explanation';
 import Question from 'components/question/question';
 import Meta from 'components/seo/meta';
-import Challenge from 'components/share/challenge';
+import Challenge from 'components/win/challenge';
 import Emoji from 'components/win/emoji';
 import Gift from 'components/win/gift';
 import Score from 'components/win/score';
 import Share from 'components/win/share';
+
+import { useViewport } from 'hooks/useViewport';
 
 const Quiz: FC = () => {
   useEffect(() => {
@@ -33,6 +35,9 @@ const Quiz: FC = () => {
   const [correctAnswers, setCorrectAnswers] = useState<number>(0);
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
   const [showShare, setShowShare] = useState<boolean>(false);
+
+  const { isMobile } = useViewport();
+  console.log(isMobile);
 
   const { loading, data } = useQuery<GetSurvey>(GET_SURVEY, {
     variables: { slug },
@@ -85,7 +90,7 @@ const Quiz: FC = () => {
         image="/favicon/android-chrome-512x512.png"
       />
 
-      {question && (
+      {question && questionIndex < maxQuestions && (
         <>
           <Flex align="center" direction="column" marginTop="2rem">
             <Flex direction="column" align="center" width="80%">

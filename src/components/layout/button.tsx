@@ -27,7 +27,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   font-family: ${theme.fonts.primary};
   margin-left: ${({ marginLeft }) => marginLeft && marginLeft};
   margin-top: ${({ marginTop }) => marginTop && marginTop};
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem;
   user-select: none;
   width: fit-content;
 `;
