@@ -51,6 +51,12 @@ const LinkContainer = styled.div`
     }
   }
 
+  button p {
+    &:hover {
+      color: inherit;
+    }
+  }
+
   @media screen and (max-width: ${theme.layout.md}) {
     margin-left: 0;
     margin-top: 3rem;

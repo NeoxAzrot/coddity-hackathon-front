@@ -46,8 +46,15 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   margin-top: ${({ marginTop }) => marginTop && marginTop};
   padding: ${({ small, large, special }) =>
     small ? '0.5rem 2.5rem' : large ? '2rem 4rem' : special ? '1.5rem 5rem' : '1rem 3rem'};
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   user-select: none;
   width: fit-content;
+
+  &:hover {
+    background-color: ${({ secondary, backgroundColor }) =>
+      secondary && (backgroundColor ? backgroundColor : theme.colors.primary)};
+    transform: scale(1.05);
+  }
 `;
 
 const Button: FC<ButtonProps> = ({
