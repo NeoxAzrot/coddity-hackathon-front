@@ -8,6 +8,7 @@
   "importOrder": [
     "^api/(.*)$",
     "^components/(.*)$",
+    "^data/(.*)$",
     "^hooks/(.*)$",
     "^pages/(.*)$",
     "^theme/(.*)$",

@@ -18,6 +18,7 @@ const FooterContainer = styled.footer<FooterContainerProps>`
   display: flex;
   flex-direction: column;
   left: ${({ fullPage }) => fullPage && '6rem'};
+  margin-top: 5rem;
   position: ${({ fullPage }) => fullPage && 'absolute'};
   right: ${({ fullPage }) => fullPage && '6rem'};
 `;

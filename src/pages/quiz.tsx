@@ -20,8 +20,6 @@ import Gift from 'components/win/gift';
 import Score from 'components/win/score';
 import Share from 'components/win/share';
 
-import { useViewport } from 'hooks/useViewport';
-
 const Quiz: FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,9 +33,6 @@ const Quiz: FC = () => {
   const [correctAnswers, setCorrectAnswers] = useState<number>(0);
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
   const [showShare, setShowShare] = useState<boolean>(false);
-
-  const { isMobile } = useViewport();
-  console.log(isMobile);
 
   const { loading, data } = useQuery<GetSurvey>(GET_SURVEY, {
     variables: { slug },

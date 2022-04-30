@@ -7,8 +7,10 @@ interface FlexProps {
   align?: 'start' | 'end' | 'center' | 'space-between' | 'space-around';
   marginTop?: string;
   marginBottom?: string;
+  marginLeft?: string;
   width?: string;
   className?: string;
+  id?: string;
 }
 
 interface FlexContainerProps {
@@ -17,6 +19,7 @@ interface FlexContainerProps {
   align?: 'start' | 'end' | 'center' | 'space-between' | 'space-around';
   marginTop?: string;
   marginBottom?: string;
+  marginLeft?: string;
   width?: string;
 }
 
@@ -26,6 +29,7 @@ const Container = styled.div<FlexContainerProps>`
   flex-direction: ${({ direction }) => direction && direction};
   justify-content: ${({ justify }) => justify && justify};
   margin-bottom: ${({ marginBottom }) => marginBottom};
+  margin-left: ${({ marginLeft }) => marginLeft};
   margin-top: ${({ marginTop }) => marginTop};
   width: ${({ width }) => width};
 `;
@@ -37,8 +41,10 @@ const Flex: FC<FlexProps> = ({
   align,
   marginTop,
   marginBottom,
+  marginLeft,
   width,
   className,
+  id,
 }) => {
   return (
     <Container
@@ -47,8 +53,10 @@ const Flex: FC<FlexProps> = ({
       align={align}
       marginTop={marginTop}
       marginBottom={marginBottom}
+      marginLeft={marginLeft}
       width={width}
       className={className}
+      id={id}
     >
       {children}
     </Container>

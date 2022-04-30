@@ -20,6 +20,8 @@ interface TextProps {
   align?: 'left' | 'center' | 'right';
   onClick?: () => void;
   className?: string;
+  underline?: boolean;
+  hoverColor?: string;
 }
 
 interface TextContainerProps {
@@ -36,6 +38,8 @@ interface TextContainerProps {
   width?: string;
   align?: string;
   onClick?: () => void;
+  underline?: boolean;
+  hoverColor?: string;
 }
 
 const TextContainer = styled.p<TextContainerProps>`
@@ -50,22 +54,28 @@ const TextContainer = styled.p<TextContainerProps>`
   margin-right: ${({ marginRight }) => marginRight && marginRight};
   margin-top: ${({ marginTop }) => marginTop && marginTop};
   text-align: ${({ align }) => align && align};
+  text-decoration: ${({ underline }) => underline && 'underline'};
   text-transform: ${({ uppercase }) => uppercase && 'uppercase'};
+  transition: ${({ hoverColor }) => hoverColor && 'color 0.2s ease-in-out'};
   width: ${({ width }) => width && width};
+
+  &:hover {
+    color: ${({ hoverColor }) => hoverColor && hoverColor};
+  }
 
   a {
     color: ${theme.colors.primary};
     position: relative;
 
     &:before {
-      content: '';
-      width: 0;
-      height: 0.1rem;
       background-color: ${theme.colors.primary};
-      position: absolute;
       bottom: -0.1rem;
+      content: '';
+      height: 0.1rem;
       left: 0;
+      position: absolute;
       transition: width 0.2s ease-in-out;
+      width: 0;
     }
 
     &:hover {
@@ -73,6 +83,19 @@ const TextContainer = styled.p<TextContainerProps>`
         width: 100%;
       }
     }
+  }
+
+  .primary {
+    color: ${theme.colors.primary};
+  }
+  .secondary {
+    color: ${theme.colors.secondary};
+  }
+  .tertiary {
+    color: ${theme.colors.tertiary};
+  }
+  .quaternary {
+    color: ${theme.colors.quaternary};
   }
 `;
 
@@ -95,6 +118,8 @@ const Text: FC<TextProps> = ({
   align,
   onClick,
   className,
+  underline,
+  hoverColor,
 }) => {
   return (
     <TextContainer
@@ -114,6 +139,8 @@ const Text: FC<TextProps> = ({
       dangerouslySetInnerHTML={dangerouslySetInnerHTML}
       onClick={onClick}
       className={className}
+      underline={underline}
+      hoverColor={hoverColor}
     >
       {content && (
         <>

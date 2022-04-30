@@ -11,23 +11,38 @@ interface ButtonProps {
   backgroundColor?: string;
   marginLeft?: string;
   marginTop?: string;
+  size?: string;
+  fontFamily?: string;
+  weight?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+  secondary?: boolean;
+  small?: boolean;
+  large?: boolean;
+  special?: boolean;
 }
 
 interface ButtonContainerProps {
   backgroundColor?: string;
   marginLeft?: string;
   marginTop?: string;
+  secondary?: boolean;
+  small?: boolean;
+  large?: boolean;
+  special?: boolean;
 }
 
 const ButtonContainer = styled.button<ButtonContainerProps>`
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor ? backgroundColor : theme.colors.primary};
-  border-radius: 3rem;
+  background-color: ${({ secondary, backgroundColor }) =>
+    secondary ? 'transparent' : backgroundColor ? backgroundColor : theme.colors.primary};
+  border: ${({ secondary, backgroundColor }) =>
+    secondary
+      ? `0.2rem solid ${backgroundColor ? backgroundColor : theme.colors.primary}`
+      : 'none'};
+  border-radius: ${({ special }) => (special ? '50%' : '3rem')};
   cursor: pointer;
-  font-family: ${theme.fonts.primary};
   margin-left: ${({ marginLeft }) => marginLeft && marginLeft};
   margin-top: ${({ marginTop }) => marginTop && marginTop};
-  padding: 1rem 3rem;
+  padding: ${({ small, large, special }) =>
+    small ? '0.5rem 2.5rem' : large ? '2rem 4rem' : special ? '1.5rem 5rem' : '1rem 3rem'};
   user-select: none;
   width: fit-content;
 `;
@@ -39,6 +54,13 @@ const Button: FC<ButtonProps> = ({
   backgroundColor,
   marginLeft,
   marginTop,
+  size,
+  fontFamily,
+  weight,
+  secondary,
+  small,
+  large,
+  special,
 }) => {
   return (
     <ButtonContainer
@@ -47,8 +69,17 @@ const Button: FC<ButtonProps> = ({
       backgroundColor={backgroundColor}
       marginLeft={marginLeft}
       marginTop={marginTop}
+      secondary={secondary}
+      small={small}
+      large={large}
+      special={special}
     >
-      <Text content={content} size="2.2rem" weight="600" />
+      <Text
+        content={content}
+        size={size ? size : '2.2rem'}
+        weight={weight ? weight : '500'}
+        fontFamily={fontFamily ? fontFamily : theme.fonts.primary}
+      />
     </ButtonContainer>
   );
 };

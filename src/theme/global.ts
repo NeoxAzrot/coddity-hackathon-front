@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     src: url("/assets/fonts/Iowan_Old_Style_bold.woff") format("woff");
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: ${theme.fonts.primary};
     font-size: 1.6rem;
