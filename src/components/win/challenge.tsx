@@ -8,12 +8,15 @@ import Flex from 'components/layout/flex';
 import Input from 'components/layout/input';
 import Text from 'components/layout/text';
 
+import { useViewport } from 'hooks/useViewport';
+
 interface ChallengeProps {
   slug: string;
 }
 
 const Challenge: FC<ChallengeProps> = ({ slug }) => {
   const { t } = useTranslation();
+  const { isMobile } = useViewport();
   const navigate = useNavigate();
 
   const url = `${process.env.REACT_APP_WEBSITE_URL}/quiz/${slug}`;
@@ -29,10 +32,17 @@ const Challenge: FC<ChallengeProps> = ({ slug }) => {
         fontFamily={theme.fonts.secondary}
         weight="700"
         size="2.6rem"
+        align="center"
       />
 
       <Flex direction="column" align="center" marginTop="12rem" width="100%">
-        <Input value={url} width="80%" hasIcon onClick={handleCopyLinkClick} disabled />
+        <Input
+          value={url}
+          width={isMobile ? '100%' : '80%'}
+          hasIcon
+          onClick={handleCopyLinkClick}
+          disabled
+        />
         <Button
           content={t('button.home')}
           marginTop="5rem"

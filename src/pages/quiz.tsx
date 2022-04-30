@@ -20,6 +20,8 @@ import Gift from 'components/win/gift';
 import Score from 'components/win/score';
 import Share from 'components/win/share';
 
+import { useViewport } from 'hooks/useViewport';
+
 const Quiz: FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,6 +29,7 @@ const Quiz: FC = () => {
 
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { isMobile } = useViewport();
   const { slug } = useParams();
   const [questionIndex, setQuestionIndex] = useState<number>(0);
   const [question, setQuestion] = useState<Question>();
@@ -76,6 +79,10 @@ const Quiz: FC = () => {
     }
   };
 
+  if (!loading && !data?.survey) {
+    navigate('/404');
+  }
+
   return (
     <Layout menuHidden fullPage>
       <Meta
@@ -88,17 +95,22 @@ const Quiz: FC = () => {
       {question && questionIndex < maxQuestions && (
         <>
           <Flex align="center" direction="column" marginTop="2rem">
-            <Flex direction="column" align="center" width="80%">
+            <Flex direction="column" align="center" width={isMobile ? '100%' : '80%'}>
               <Question question={question.question} />
 
-              <Flex direction="column" align="start" width="100%" marginTop="2rem">
+              <Flex
+                direction="column"
+                align="start"
+                width={isMobile ? '80%' : '100%'}
+                marginTop="2rem"
+              >
                 {!showExplanation ? (
                   <>
                     {question.answers.results.map((item, index) => {
                       const { id, answer, correct } = item;
                       const color = getAnswerColor(index);
                       return (
-                        <Flex marginTop="5rem" key={id}>
+                        <Flex marginTop={isMobile ? '2rem' : '4rem'} key={id}>
                           <Answer
                             answer={answer}
                             color={color}
@@ -116,7 +128,7 @@ const Quiz: FC = () => {
           </Flex>
 
           {questionIndex < 1 && !showExplanation && (
-            <Flex marginTop="5rem">
+            <Flex marginTop="5rem" marginLeft={isMobile ? '3rem' : '0'}>
               <InlineButton
                 content={t('button.previous')}
                 onClick={() => {
@@ -134,7 +146,7 @@ const Quiz: FC = () => {
       {questionIndex === maxQuestions && !loading && !showShare && (
         <>
           <Flex align="center" direction="column" marginTop="2rem">
-            <Flex direction="column" align="center" width="80%">
+            <Flex direction="column" align="center" width={isMobile ? '100%' : '80%'}>
               <Score correctAnswers={correctAnswers} />
 
               <Gift />
@@ -160,12 +172,12 @@ const Quiz: FC = () => {
       {showShare && slug && (
         <>
           <Flex align="center" direction="column" marginTop="2rem">
-            <Flex direction="column" align="center" width="80%">
+            <Flex direction="column" align="center" width={isMobile ? '100%' : '80%'}>
               <Challenge slug={slug} />
             </Flex>
           </Flex>
 
-          <Flex marginTop="5rem">
+          <Flex marginTop={isMobile ? '8rem' : '5rem'} marginLeft={isMobile ? '3rem' : '0'}>
             <InlineButton
               content={t('button.previous')}
               onClick={() => {

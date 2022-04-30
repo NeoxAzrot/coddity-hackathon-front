@@ -11,6 +11,7 @@ interface ButtonProps {
   backgroundColor?: string;
   marginLeft?: string;
   marginTop?: string;
+  marginBottom?: string;
   size?: string;
   fontFamily?: string;
   weight?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
@@ -24,6 +25,7 @@ interface ButtonContainerProps {
   backgroundColor?: string;
   marginLeft?: string;
   marginTop?: string;
+  marginBottom?: string;
   secondary?: boolean;
   small?: boolean;
   large?: boolean;
@@ -39,6 +41,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
       : 'none'};
   border-radius: ${({ special }) => (special ? '50%' : '3rem')};
   cursor: pointer;
+  margin-bottom: ${({ marginBottom }) => marginBottom && marginBottom};
   margin-left: ${({ marginLeft }) => marginLeft && marginLeft};
   margin-top: ${({ marginTop }) => marginTop && marginTop};
   padding: ${({ small, large, special }) =>
@@ -54,6 +57,7 @@ const Button: FC<ButtonProps> = ({
   backgroundColor,
   marginLeft,
   marginTop,
+  marginBottom,
   size,
   fontFamily,
   weight,
@@ -69,6 +73,7 @@ const Button: FC<ButtonProps> = ({
       backgroundColor={backgroundColor}
       marginLeft={marginLeft}
       marginTop={marginTop}
+      marginBottom={marginBottom}
       secondary={secondary}
       small={small}
       large={large}

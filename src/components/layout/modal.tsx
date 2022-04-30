@@ -44,6 +44,11 @@ const ContentContainer = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: fit-content;
+
+  @media screen and (max-width: ${theme.layout.md}) {
+    padding: 6rem 3rem;
+    width: 90%;
+  }
 `;
 
 const CloseButton = styled.span`

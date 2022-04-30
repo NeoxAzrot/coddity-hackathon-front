@@ -11,10 +11,17 @@ import Layout from 'components/layout/layout';
 import Text from 'components/layout/text';
 import Meta from 'components/seo/meta';
 
+import { useViewport } from 'hooks/useViewport';
+
 const StyledInlineButton = styled(InlineButton)`
   bottom: 15rem;
   position: absolute;
   right: 6rem;
+
+  @media screen and (max-width: ${theme.layout.md}) {
+    right: 6rem;
+    bottom: 50%;
+  }
 `;
 
 const Error404: FC = () => {
@@ -24,6 +31,7 @@ const Error404: FC = () => {
 
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { isMobile } = useViewport();
 
   return (
     <Layout fullPage>
@@ -42,7 +50,7 @@ const Error404: FC = () => {
       <Flex direction="column" align="center" marginTop="5rem">
         <Text
           content={t('error404.title')}
-          size="6.4rem"
+          size={isMobile ? '4.8rem' : '6.4rem'}
           weight="700"
           uppercase
           type="h1"

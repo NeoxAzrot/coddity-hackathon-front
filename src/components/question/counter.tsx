@@ -16,6 +16,11 @@ const CounterContainer = styled(Flex)`
   bottom: 6rem;
   left: 6rem;
   position: absolute;
+
+  @media screen and (max-width: ${theme.layout.md}) {
+    bottom: 3rem;
+    left: 3rem;
+  }
 `;
 
 const Counter: FC<CounterProps> = ({ count, maxQuestions }) => {

@@ -7,6 +7,8 @@ import Button from 'components/layout/button';
 import Flex from 'components/layout/flex';
 import Text from 'components/layout/text';
 
+import { useViewport } from 'hooks/useViewport';
+
 interface AboutProps {
   onClick: () => void;
 }
@@ -17,10 +19,11 @@ const StyledButton = styled(Button)`
 
 const About: FC<AboutProps> = ({ onClick }) => {
   const { t } = useTranslation();
+  const { isMobile } = useViewport();
   const [showButton, setShowButton] = useState<boolean>(false);
 
   return (
-    <Flex direction="column" marginTop="15rem" id="about">
+    <Flex direction="column" marginTop={isMobile ? '8rem' : '15rem'} id="about">
       <Text
         content={t('home.about.title')}
         fontFamily={theme.fonts.secondary}

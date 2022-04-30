@@ -7,12 +7,15 @@ import Button from 'components/layout/button';
 import Flex from 'components/layout/flex';
 import Text from 'components/layout/text';
 
+import { useViewport } from 'hooks/useViewport';
+
 interface HeroProps {
   onClick: () => void;
 }
 
 const Hero: FC<HeroProps> = ({ onClick }) => {
   const { t } = useTranslation();
+  const { isMobile } = useViewport();
 
   const PYRAMID_SIZE = 3;
 
@@ -30,17 +33,33 @@ const Hero: FC<HeroProps> = ({ onClick }) => {
 
   return (
     <Flex direction="column" marginTop="10rem">
-      <Flex direction="row" justify="space-between">
+      <Flex direction={isMobile ? 'column' : 'row'} justify="space-between" align="center">
         <Text
           content={t('home.hero.title')}
           fontFamily={theme.fonts.secondary}
-          size="12rem"
+          size={isMobile ? '4.8rem' : '12rem'}
           uppercase
-          width="50%"
+          width={isMobile ? '100%' : '50%'}
           type="h1"
         />
 
-        <Flex direction="column" align="center" justify="end" width="50%" marginLeft="3rem">
+        {isMobile && (
+          <Text
+            dangerouslySetInnerHTML={{ __html: t('home.hero.subtitle') }}
+            size="1.8rem"
+            lineHeight="2em"
+            marginTop="2rem"
+            marginBottom="3rem"
+          />
+        )}
+
+        <Flex
+          direction="column"
+          align="center"
+          justify="end"
+          width={isMobile ? '100%' : '50%'}
+          marginLeft={isMobile ? '0' : '3rem'}
+        >
           <Flex direction="column-reverse" align="center">
             {Array.from(Array(PYRAMID_SIZE)).map((_, index) => {
               return (
@@ -57,12 +76,14 @@ const Hero: FC<HeroProps> = ({ onClick }) => {
         </Flex>
       </Flex>
 
-      <Text
-        dangerouslySetInnerHTML={{ __html: t('home.hero.subtitle') }}
-        size="1.8rem"
-        lineHeight="2em"
-        marginTop="5rem"
-      />
+      {!isMobile && (
+        <Text
+          dangerouslySetInnerHTML={{ __html: t('home.hero.subtitle') }}
+          size="1.8rem"
+          lineHeight="2em"
+          marginTop="5rem"
+        />
+      )}
     </Flex>
   );
 };

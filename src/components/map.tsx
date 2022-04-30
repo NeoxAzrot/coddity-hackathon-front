@@ -7,6 +7,8 @@ import theme from 'theme';
 import Flex from 'components/layout/flex';
 import Text from 'components/layout/text';
 
+import { useViewport } from 'hooks/useViewport';
+
 import { countryNamesInEnglish, getCountryISO2 } from 'utils/country';
 import { addPlusToNumber } from 'utils/numbers';
 
@@ -89,6 +91,7 @@ const Map: FC<MapProps> = ({
   maxValue,
 }) => {
   const { t } = useTranslation();
+  const { isMobile } = useViewport();
 
   const [scenario, setScenario] = useState<'126' | '245' | '585'>('126');
   const [horizon, setHorizon] = useState<'2041-2060' | '2081-2100'>('2041-2060');
@@ -159,7 +162,13 @@ const Map: FC<MapProps> = ({
         marginTop="2.5rem"
       />
 
-      <Flex justify="center" marginTop="3rem" marginBottom="1.5rem">
+      <Flex
+        direction={isMobile ? 'column' : 'row'}
+        justify="center"
+        align="center"
+        marginTop="3rem"
+        marginBottom="1.5rem"
+      >
         <Text
           content={t('home.data.buttons.horizon.middle')}
           onClick={() => setHorizon('2041-2060')}
@@ -173,7 +182,8 @@ const Map: FC<MapProps> = ({
         <Text
           content={t('home.data.buttons.horizon.future')}
           onClick={() => setHorizon('2081-2100')}
-          marginLeft="3rem"
+          marginLeft={isMobile ? '0' : '3rem'}
+          marginTop={isMobile ? '2rem' : '0'}
           weight="600"
           size="1.8rem"
           underline={horizon === '2081-2100'}

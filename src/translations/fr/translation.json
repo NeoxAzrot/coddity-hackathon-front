@@ -75,7 +75,8 @@
     },
     "gift": {
       "title": "On dirait bien que tu viens de gagner une récompense !",
-      "qr_code": "Scanne pour découvrir !"
+      "qr_code": "Scanne pour découvrir !",
+      "qr_code_mobile": "Clique sur l'image pour découvrir !"
     }
   },
   "share": {

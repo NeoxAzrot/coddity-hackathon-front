@@ -23,7 +23,7 @@ export const GET_SURVEY = gql`
 `;
 
 export const GET_SURVEYS = gql`
-  query GetSurveyS {
+  query GetSurveys {
     surveys {
       results {
         id
@@ -34,7 +34,7 @@ export const GET_SURVEYS = gql`
 `;
 
 export const CREATE_SURVEY = gql`
-  mutation CreateUser {
+  mutation CreateSurvey {
     createSurvey {
       slug
     }

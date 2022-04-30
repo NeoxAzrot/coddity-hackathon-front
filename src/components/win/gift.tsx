@@ -7,6 +7,8 @@ import Flex from 'components/layout/flex';
 import Modal from 'components/layout/modal';
 import Text from 'components/layout/text';
 
+import { useViewport } from 'hooks/useViewport';
+
 const shake = keyframes`
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -41,7 +43,14 @@ const QRCodeImage = styled.img`
 
 const Gift: FC = () => {
   const { t } = useTranslation();
+  const { isMobile } = useViewport();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleShareClick = () => {
+    if (isMobile) {
+      window.open('https://www.instagram.com/ar/4975101039241918');
+    }
+  };
 
   return (
     <>
@@ -66,15 +75,17 @@ const Gift: FC = () => {
             size="2.2rem"
             weight="700"
             marginBottom="3rem"
+            align="center"
           />
 
-          <QRCodeImage src="/assets/images/qr-code.png" alt="QR code" />
+          <QRCodeImage src="/assets/images/qr-code.png" alt="QR code" onClick={handleShareClick} />
           <Text
-            content={t('quiz.gift.qr_code')}
+            content={isMobile ? t('quiz.gift.qr_code_mobile') : t('quiz.gift.qr_code')}
             fontFamily={theme.fonts.secondary}
             size="2.2rem"
             weight="700"
             marginTop="2rem"
+            align="center"
           />
         </Flex>
       </Modal>

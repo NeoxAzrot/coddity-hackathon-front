@@ -20,6 +20,7 @@ const Score: FC<ScoreProps> = ({ correctAnswers }) => {
         fontFamily={theme.fonts.secondary}
         weight="700"
         size="2.6rem"
+        align="center"
       />
       <Flex marginTop="3rem">
         <Text content={score.toString()} fontFamily={theme.fonts.secondary} size="7.2rem" />

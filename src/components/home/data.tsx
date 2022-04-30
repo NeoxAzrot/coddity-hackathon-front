@@ -9,11 +9,14 @@ import Map, { MapDataEnum } from 'components/map';
 import * as dataPrecip from 'data/precip.json';
 import * as dataTemp from 'data/temp.json';
 
+import { useViewport } from 'hooks/useViewport';
+
 const Data: FC = () => {
   const { t } = useTranslation();
+  const { isMobile } = useViewport();
 
   return (
-    <Flex direction="column" id="data" marginTop="15rem">
+    <Flex direction="column" id="data" marginTop={isMobile ? '10rem' : '15rem'}>
       <Text
         content={t('home.data.title')}
         fontFamily={theme.fonts.secondary}
