@@ -8,6 +8,7 @@ interface InlineButtonProps {
   content: string;
   arrowPosition: 'left' | 'right';
   onClick: () => void;
+  className?: string;
 }
 
 interface ArrowProps {
@@ -81,9 +82,9 @@ const Arrow = styled.span<ArrowProps>`
   }
 `;
 
-const InlineButton: FC<InlineButtonProps> = ({ content, arrowPosition, onClick }) => {
+const InlineButton: FC<InlineButtonProps> = ({ content, arrowPosition, onClick, className }) => {
   return (
-    <InlineButtonContainer onClick={onClick}>
+    <InlineButtonContainer onClick={onClick} className={className}>
       {arrowPosition === 'left' && <Arrow arrowPosition={arrowPosition} />}
 
       <Text content={content} fontFamily={theme.fonts.secondary} size="2.2rem" />

@@ -22,6 +22,7 @@ const Hero: FC<HeroProps> = ({ onClick }) => {
           size="12rem"
           uppercase
           width="50%"
+          type="h1"
         />
 
         <Flex justify="center" align="end" width="50%" marginLeft="3rem">

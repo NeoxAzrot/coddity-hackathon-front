@@ -27,6 +27,7 @@ const About: FC<AboutProps> = ({ onClick }) => {
         size="2.2rem"
         weight="600"
         uppercase
+        type="h2"
       />
       <Text
         dangerouslySetInnerHTML={{ __html: t('home.about.description') }}

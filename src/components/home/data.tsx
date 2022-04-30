@@ -20,6 +20,7 @@ const Data: FC = () => {
         size="2.2rem"
         weight="600"
         uppercase
+        type="h2"
       />
 
       <Map

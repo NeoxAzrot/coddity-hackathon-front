@@ -15,6 +15,7 @@ const Question: FC<QuestionProps> = ({ question }) => {
       align="center"
       weight="700"
       size="2.2rem"
+      type="h2"
     />
   );
 };
