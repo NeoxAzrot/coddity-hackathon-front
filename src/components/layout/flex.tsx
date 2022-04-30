@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styled from 'styled-components';
 
 interface FlexProps {
-  direction?: 'row' | 'column';
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around';
   align?: 'start' | 'end' | 'center' | 'space-between' | 'space-around';
   marginTop?: string;
@@ -14,7 +14,7 @@ interface FlexProps {
 }
 
 interface FlexContainerProps {
-  direction?: 'row' | 'column';
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around';
   align?: 'start' | 'end' | 'center' | 'space-between' | 'space-around';
   marginTop?: string;
