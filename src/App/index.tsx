@@ -2,6 +2,8 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { FC } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
+import { ViewportProvider } from 'hooks/useViewport';
+
 import { GlobalStyle, ResetStyle } from 'theme/global';
 
 import Router from './router';
@@ -14,11 +16,13 @@ const client = new ApolloClient({
 const App: FC = () => {
   return (
     <ApolloProvider client={client}>
-      <HelmetProvider>
-        <ResetStyle />
-        <GlobalStyle />
-        <Router />
-      </HelmetProvider>
+      <ViewportProvider>
+        <HelmetProvider>
+          <ResetStyle />
+          <GlobalStyle />
+          <Router />
+        </HelmetProvider>
+      </ViewportProvider>
     </ApolloProvider>
   );
 };

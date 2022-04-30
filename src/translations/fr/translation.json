@@ -1,3 +1,85 @@
 {
-  "example": "Example text"
+  "nav": {
+    "quiz": "Quiz",
+    "about": "À propos",
+    "data": "Data"
+  },
+  "footer": {
+    "rights": "© Tous droits réservés",
+    "credits": "Développé par <a href=\"https://eliseechasseriau.com\" target=\"_blank\">Elise Echasseriau</a> & <a href=\"https://samilafrance.com\" target=\"_blank\">Sami Lafrance</a>"
+  },
+  "home": {
+    "hero": {
+      "title": "Climate Matters",
+      "subtitle": "Tu veux comprendre les dernières publications du GIEC ? <br/> Savoir si la hausse des températures, des précipitations, des événements extrêmes t’impacteras ? <br/> Tu es au bon endroit !"
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Depuis de nombreuses années, le <del>réchauffement</del><b> DÉRÈGLEMENT</b> climatique affecte chaque région du globe par de multiples facettes. Difficile de les éviter, ces phénomènes désastreux sont évalué depuis plus de trente ans par le Groupe d’experts intergouvernemental sur l’évolution du climat (GIEC). Tous les 5 ans, des volontaires de 195 pays membres rédigent un nouveau rapport alertant les décideurs et l’opinion publique de l’évolution du climat, de ses causes et de ses conséquences.",
+      "description_2": "Cette année, le rapport a été divisé en trois volets. <br/> Le premier volet sorti en août 2021, concluait que le changement climatique était plus rapide que prévu. Le deuxième volet sorti en février 2022 s’intéressait aux effets, vulnérabilités et capacités d’adaptation à la crise climatique. Quant au dernier, publié en avril 2022, affirme la nécessité de réagir dans l’urgence avant qu’il ne soit trop tard. Malheureusement, si encore beaucoup de personnes n’ont pas conscience de ce problème, c’est majoritairement dû à un poids médiatique, trop faible et une inaccessibilité du rapport trop important.",
+      "description_3": "Le but de <b>Warmd</b>, c’est justement de rendre les solutions du rapports plus accessibles en les vulgarisant sous forme de cartes interactives et de quiz. En sensibilisant les individus nous espérons tous pouvoir agir avant les 3 prochaines années, car sinon, c’est pour la moitié des régions du monde, 10 caractéristiques au minimum qui changeront. Outre l’augmentation des températures, la baisse de l’humidité des sols, la survenance de sécheresses et d’épisodes pluvieux extrêmes, il faudra compter aussi avec les érosions côtières, la montée du niveau des mers…",
+      "question": "Tu veux faire le quiz ? "
+    },
+    "data": {
+      "title": "Data-visualisation",
+      "temp": {
+        "subtitle": "Augmentation annuelle de la température",
+        "description": "Le GIEC a tenté de montrer au grand jour dans son dernier rapport que l’augmentation de la température sur notre Terre représente un des plus grands dangers. Cependant, contrairement aux idées reçues, <b class=\"primary\">cette augmentation n’est pas linéaire</b>. Il ne fera pas simplement 3°C de plus en 2050, plein de paramètres entrent en compte dans ces calculs. En effet, l’augmentation ne sera pas la même selon votre localisation. A moyen terme, les Australiens verront leur température monter de 1°C, tandis que les Russes, eux, connaîtront une augmentation doublement plus importante, avec une hausse prévue de 2°C. Cependant, cet exemple n’est à prendre en compte que si les changements suivent le scénario de réchauffement le plus optimiste réalisé par le GIEC. En effet, plusieurs prévisions sont possibles. Une optimiste, qui équivaudrait à une <b class=\"quaternary\">augmentation de 2°C</b>, une neutre, pour une hausse de <b class=\"tertiary\">3°C</b>, et une pessimiste, dans le pire des cas, qui prévoit un réchauffement de <b class=\"primary\">+4°C</b>.",
+        "tooltip": "<p style='text-align: center;'><b style='font-size: 16px;'>%%COUNTRY%%</b><br/><br/><b style='font-size: 14px;'>%%VALUE%%°C</b> soit<br/><b style='font-size: 14px;'>%%CHANGE%%°C</b> par rapport au <br/>20 dernières années</span></p>",
+        "params": "Température"
+      },
+      "precip": {
+        "subtitle": "Augmentation des phénomènes extrême de pluie",
+        "description": "Pour les mêmes raisons, les intempéries et autres phénomènes météorologiques extrêmes augmentent dans le monde. La quantité de précipitations va jusqu’à <b class=\"tertiary\">37.4%</b> sur le moyen et <b class=\"quaternary\">68.4%</b> d’augmentation sur le long terme. L'une des conclusions des experts du GIEC est une augmentation de la fréquence ou de l'intensité des fortes précipitations en Amérique du Nord et en Europe, allant de 4.9% d’augmentation en Amérique à 5.5% en Europe. En revanche, l'intensité et la fréquence des périodes sèches ont augmenté dans le bassin méditerranéen et sous les tropiques. La différence de précipitations saisonnières entre les saisons sèches et humides, et la différence entre les saisons sèches et humides, devrait augmenter dans une grande partie du monde au 21e siècle. Les précipitations extrêmes peuvent devenir plus intenses et fréquentes dans les continents des latitudes moyennes (comme l'Europe) et les régions tropicales humides. En revanche, les précipitations moyennes devraient diminuer dans de nombreuses régions sèches subtropicales et de latitude moyenne, telles que la Méditerranée et l'Afrique du Nord.",
+        "tooltip": "<p style='text-align: center;'><b style='font-size: 16px;'>%%COUNTRY%%</b><br/><br/><b style='font-size: 14px;'>%%VALUE%% mm/an</b> soit<br/><b style='font-size: 14px;'>%%CHANGE%% %</b> <span style='font-size: 12px;'>par rapport au <br/>20 dernières années</span></p>",
+        "params": "Précipitation"
+      },
+      "buttons": {
+        "horizon": {
+          "middle": "Moyen Terme (2041 - 2060)",
+          "future": "Long Terme (2081 - 2100)"
+        },
+        "scenario": {
+          "title": "Scénario de réchauffement",
+          "soon": "+2°C",
+          "middle": "+3°C",
+          "future": "+4°C"
+        }
+      }
+    }
+  },
+  "error404": {
+    "title": "Error 404",
+    "description": "Cette page n’existe pas."
+  },
+  "button": {
+    "yes": "Oui :)",
+    "no": "Non :(",
+    "start_quiz": "Commencer le quiz",
+    "back_home": "Page d'accueil",
+    "next": "Suivant",
+    "previous": "Retour",
+    "share": "Partager",
+    "home": "Accueil",
+    "copy": "Copié !"
+  },
+  "quiz": {
+    "result": {
+      "title": "Félicitation ! Tu viens de terminer ton quiz avec",
+      "points": "pts",
+      "share": "Tu peux maintenant défier tes amis ou partager ton score !",
+      "challenge": "Défier mes amis"
+    },
+    "challenge": {
+      "title": "Partage ce lien à ton adversaire !"
+    },
+    "gift": {
+      "title": "On dirait bien que tu viens de gagner une récompense !",
+      "qr_code": "Scanne pour découvrir !"
+    }
+  },
+  "share": {
+    "text": "Je viens de réussir mon quiz sur Warmd avec {{score}} points 🎉\n\n",
+    "hashtags": "Warmd,Climate,Quiz"
+  }
 }

@@ -3,21 +3,31 @@ import theme from 'theme';
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Roboto';
-    src: url("/assets/fonts/Roboto.ttf") format("truetype");
+    font-family: 'IowanOldStyle';
+    font-weight: 400;
+    src: url("/assets/fonts/Iowan_Old_Style_regular.woff") format("woff");
   }
 
   @font-face {
-    font-family: 'IowanOldSt BT';
-    src: url("/assets/fonts/Iowan_Old_Style_bold.woff") format("truetype");
+    font-family: 'IowanOldStyle';
+    font-weight: 700;
+    src: url("/assets/fonts/Iowan_Old_Style_bold.woff") format("woff");
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     font-family: ${theme.fonts.primary};
     font-size: 1.6rem;
     color: ${theme.colors.black};
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.background};
   }
+
+  b {
+    font-weight: 600;
+  } 
 
   img {
     user-select: none;

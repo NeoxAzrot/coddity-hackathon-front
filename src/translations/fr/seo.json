@@ -1,13 +1,17 @@
 {
-  "title": "Website title",
+  "title": "Warmd",
   "description": "Website description",
   "404": {
     "title": "Error 404",
     "description": "Description 404"
   },
+  "quiz": {
+    "title": "Quiz",
+    "description": "Description quiz"
+  },
   "publisher": "Sami Lafrance",
-  "copyright": "© Sami Lafrance",
-  "author": "Sami Lafrance",
+  "copyright": "© Elise Echasseriau & Sami Lafrance",
+  "author": "Sami Lafrance & Elise Echasseriau",
   "reply-to": "contact@samilafrance.com",
   "keywords": "Keyword 1, keyword 2, keyword 3",
   "generator": "VS Code",

@@ -3,10 +3,13 @@
     "paths": {
       "api": ["api"],
       "components": ["components"],
+      "data": ["data"],
+      "hooks": ["hooks"],
       "pages": ["pages"],
       "theme": ["theme"],
       "translations": ["translations"],
-      "types": ["types"]
+      "types": ["types"],
+      "utils": ["utils"]
     }
   }
 }

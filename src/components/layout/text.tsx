@@ -8,6 +8,7 @@ interface TextProps {
   type?: React.ElementType;
   color?: string;
   size?: string;
+  fontFamily?: string;
   weight?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
   uppercase?: boolean;
   lineHeight?: string;
@@ -17,11 +18,16 @@ interface TextProps {
   marginRight?: string;
   width?: string;
   align?: 'left' | 'center' | 'right';
+  onClick?: () => void;
+  className?: string;
+  underline?: boolean;
+  hoverColor?: string;
 }
 
 interface TextContainerProps {
   color?: string;
   size?: string;
+  fontFamily?: string;
   weight?: string;
   uppercase?: boolean;
   lineHeight?: string;
@@ -31,11 +37,15 @@ interface TextContainerProps {
   marginRight?: string;
   width?: string;
   align?: string;
+  onClick?: () => void;
+  underline?: boolean;
+  hoverColor?: string;
 }
 
-const Container = styled.p<TextContainerProps>`
+const TextContainer = styled.p<TextContainerProps>`
   color: ${({ color }) => (color ? color : theme.colors.black)};
-  font-family: ${theme.fonts.primary};
+  cursor: ${({ onClick }) => onClick && 'pointer'};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : theme.fonts.primary)};
   font-size: ${({ size }) => (size ? size : '1.6rem')};
   font-weight: ${({ weight }) => weight && weight};
   line-height: ${({ lineHeight }) => lineHeight && lineHeight};
@@ -44,8 +54,49 @@ const Container = styled.p<TextContainerProps>`
   margin-right: ${({ marginRight }) => marginRight && marginRight};
   margin-top: ${({ marginTop }) => marginTop && marginTop};
   text-align: ${({ align }) => align && align};
+  text-decoration: ${({ underline }) => underline && 'underline'};
   text-transform: ${({ uppercase }) => uppercase && 'uppercase'};
+  transition: ${({ hoverColor }) => hoverColor && 'color 0.2s ease-in-out'};
   width: ${({ width }) => width && width};
+
+  &:hover {
+    color: ${({ hoverColor }) => hoverColor && hoverColor};
+  }
+
+  a {
+    color: ${theme.colors.primary};
+    position: relative;
+
+    &:before {
+      background-color: ${theme.colors.primary};
+      bottom: -0.1rem;
+      content: '';
+      height: 0.1rem;
+      left: 0;
+      position: absolute;
+      transition: width 0.2s ease-in-out;
+      width: 0;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .primary {
+    color: ${theme.colors.primary};
+  }
+  .secondary {
+    color: ${theme.colors.secondary};
+  }
+  .tertiary {
+    color: ${theme.colors.tertiary};
+  }
+  .quaternary {
+    color: ${theme.colors.quaternary};
+  }
 `;
 
 const Text: FC<TextProps> = ({
@@ -54,6 +105,7 @@ const Text: FC<TextProps> = ({
   type,
   color,
   size,
+  fontFamily,
   weight,
   uppercase,
   lineHeight,
@@ -64,11 +116,16 @@ const Text: FC<TextProps> = ({
   width,
   children,
   align,
+  onClick,
+  className,
+  underline,
+  hoverColor,
 }) => {
   return (
-    <Container
+    <TextContainer
       color={color}
       size={size}
+      fontFamily={fontFamily}
       weight={weight}
       uppercase={uppercase}
       lineHeight={lineHeight}
@@ -80,6 +137,10 @@ const Text: FC<TextProps> = ({
       align={align}
       as={type || dangerouslySetInnerHTML ? 'div' : type}
       dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+      onClick={onClick}
+      className={className}
+      underline={underline}
+      hoverColor={hoverColor}
     >
       {content && (
         <>
@@ -87,7 +148,7 @@ const Text: FC<TextProps> = ({
           {children}
         </>
       )}
-    </Container>
+    </TextContainer>
   );
 };
 
